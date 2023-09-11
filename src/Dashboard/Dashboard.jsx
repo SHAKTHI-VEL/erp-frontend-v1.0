@@ -7,12 +7,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TopBar from "./TopBar";
 import WorksOverview from "./WorksOverview";
 import Sidebar from "./SideBar";
+import MainPageTodo from "./MainPageTodo";
+
+import ProjectList from "./ProjectList";
 
 const Dashboard = () => {
+  const [task, setTask] = useState([{}]);
+
   const [chartData, setChartData] = useState([
     { id: "Pending", label: "Pending", value: 0 },
     { id: "Completed", label: "Completed", value: 0 },
-    { id: "Incomplete", label: "Incomplete", value: 0 },
+    { id: "Incomplete", label: "Complete", value: 0 },
   ]);
 
   useEffect(function () {
@@ -33,8 +38,6 @@ const Dashboard = () => {
     getApi();
   }, []);
 
-  const [task, setTask] = useState([{}]);
-
   useEffect(function () {
     async function getEvent() {
       const res = await axios.get(
@@ -52,17 +55,25 @@ const Dashboard = () => {
 
   return (
     <Router>
-      <div className=" h-screen bg-darkBg">
+      <div className="  bg-darkBg h-full">
         <TopBar />
 
-        <div className="mainPage flex justify-between">
-          <Sidebar/>
-          <WorksOverview />
+        <div
+          style={{ gridTemplateColumns: "1fr 2fr 2fr" }}
+          className="mainPage justify-between grid"
+        >
+          <Sidebar />
+          <div className="p-6 pl-0">
+            <WorksOverview />
+          </div>
+          <PieChart data={chartData} />
+        </div>
+        <div className="block">
+          <ProjectList />
         </div>
 
-        {/* <div>
-          {/* <h1 className="text-white">Pie Chart Example</h1>
-        <PieChart data={chartData} /> */}
+        {/* 
+        <div>
 
         {/* <h1>Calendar Example</h1> */}
         {/* <Calendar task={task}/> */}

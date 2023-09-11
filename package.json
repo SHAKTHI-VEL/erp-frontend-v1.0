@@ -20,14 +20,16 @@
     "@nivo/core": "^0.83.0",
     "@nivo/line": "^0.83.0",
     "@nivo/pie": "^0.83.0",
+    "@popperjs/core": "^2.11.8",
     "axios": "^1.5.0",
     "formik": "^2.4.3",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-avatar": "^5.0.3",
     "react-avatar-editor": "^13.0.0",
+    "react-countup": "^6.4.2",
     "react-dom": "^18.2.0",
-    "react-pro-sidebar": "^0.7.1",
+    "react-loader-spinner": "^5.4.5",
     "react-router-dom": "^6.15.0"
   },
   "devDependencies": {

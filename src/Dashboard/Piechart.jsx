@@ -3,7 +3,7 @@ import { ResponsivePie } from "@nivo/pie";
 
 const PieChart = ({ data }) => {
   return (
-    <div style={{ height: "400px" }}>
+    <div style={{ height: "400px" }} className="font-white">
       <ResponsivePie
         data={data}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
@@ -11,6 +11,7 @@ const PieChart = ({ data }) => {
         padAngle={0.7}
         cornerRadius={3}
         colors={{ scheme: "nivo" }}
+        arcLinkLabelsTextColor="#fff"
         borderWidth={1}
         borderColor={{ from: "color", modifiers: [["darker", 0.2]] }}
         radialLabelsSkipAngle={10}

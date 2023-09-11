@@ -21,7 +21,9 @@ export default {
       'buttoncta':'#54B862',
       'lightBg': 'rgb(51 65 85)',
       'darkBg': 'rgb(30 41 59)',
-      'iconColor': "rgb(180 83 9)"
+      'iconColor': "rgb(180 83 9)",
+      'green': "rgb(132 204 22)",
+      "red": "rgb(244 63 94)"
     },
     extend: {
       fontFamily: {

@@ -5,7 +5,7 @@ const ToDoList = () => {
   const [data, setData] = useState({
     task: "",
     severity: "",
-    completed: false,
+    completed: "",
   });
 
   function onSubmit(e) {
@@ -31,7 +31,7 @@ const ToDoList = () => {
 
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} style={{ color: "black" }}>
         <input
           type="text"
           placeholder="task"
@@ -47,6 +47,7 @@ const ToDoList = () => {
         <input
           type="text"
           value={data.completed}
+          placeholder="status"
           onChange={(e) => setData({ ...data, completed: e.target.value })}
         />
 
